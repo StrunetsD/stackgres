@@ -37,5 +37,8 @@
 
 ##  Придется один раз зайти в psql
 `\c template1`
+
+
 `CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;`
+
 
