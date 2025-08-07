@@ -36,5 +36,6 @@
 Ресурс `SGCluster` является центральным. Он ссылается на другие конфигурации по их именам (например, `sgPostgresConfig: 'pgconfig'`). Оператор StackGres читает все эти связанные ресурсы и на их основе создает и настраивает отказоустойчивый кластер PostgreSQL.
 
 ##  Придется один раз зайти в psql
-\c template1
-CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
+`\c template1`
+`CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;`
+
