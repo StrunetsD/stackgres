@@ -1,0 +1,17 @@
+apiVersion: stackgres.io/v1
+kind: SGPostgresConfig
+metadata:
+  name: pgconfig
+  namespace: stackgres
+spec:
+  postgresVersion: "14"
+  postgresql.conf:
+    shared_preload_libraries: timescaledb
+    password_encryption: 'scram-sha-256'
+    random_page_cost: '1.5'
+    shared_buffers: '256MB'
+    wal_level: logical
+    wal_compression: on
+    max_wal_senders: '20'
+    min_wal_size: 1GB
+    max_wal_size: 2GB

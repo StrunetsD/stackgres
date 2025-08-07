@@ -1,0 +1,18 @@
+apiVersion: stackgres.io/v1
+kind: SGObjectStorage
+metadata:
+  name: s3-backups
+spec:
+  type: s3
+  s3:
+    bucket: "your-s3-bucket-name"
+    region: "your-s3-region"
+    endpoint: "your-s3-endpoint" 
+    awsCredentials:
+      secretKeySelectors:
+        accessKeyId:
+          name: your-s3-credentials-secret
+          key: accesskey
+        secretAccessKey:
+          name: your-s3-credentials-secret
+          key: secretkey

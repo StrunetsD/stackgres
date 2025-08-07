@@ -1,0 +1,10 @@
+apiVersion: stackgres.io/v1
+kind: SGScript
+metadata:
+  name: enable-timescaledb
+  namespace: stackgres
+spec:
+  scripts:
+  - name: activate-timescaledb
+    script: |
+      CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;

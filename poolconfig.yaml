@@ -1,0 +1,24 @@
+apiVersion: stackgres.io/v1
+kind: SGPoolingConfig
+metadata:
+  name: poolconfig
+  namespace: stackgres
+spec:
+  pgBouncer:
+    pgbouncer.ini:
+      pgbouncer:
+        max_client_conn: 2000
+        default_pool_size: '50'
+      databases:
+        foodb:
+          max_db_connections: 1000
+          pool_size: 20
+          dbname: 'bardb'
+          reserve_pool: 5
+      users:
+        user1:
+          pool_mode: transaction
+          max_user_connections: 50
+        user2:
+          pool_mode: session
+          max_user_connections: 100

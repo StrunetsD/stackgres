@@ -1,0 +1,18 @@
+apiVersion: stackgres.io/v1beta1
+kind: SGObjectStorage
+metadata:
+  name: backupconfig
+  namespace: stackgres
+spec:
+  type: azureBlob
+  azureBlob: 
+    bucket: "test"
+    azureCredentials:
+      secretKeySelectors:
+        accessKey:
+          name: azure-credentials
+          key: accessKey
+        storageAccount:
+            name: azure-credentials
+            key:  accessKey
+    
